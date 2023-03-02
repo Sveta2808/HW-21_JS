@@ -15,16 +15,14 @@ else {
         if (confirmation) {
             alert(difference)
             alert(multiplication)
-            if (Number(first_num) === 0) alert("error")
-            else {
-                alert(division)
-            }
         }
+        else { alert(multiplication) }
+
+        if (Number(first_num) === 0) alert("error")
         else {
-            alert(sum)
             alert(division)
-            alert(difference)
-            alert(multiplication)
         }
     }
+
 }
+
