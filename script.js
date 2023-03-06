@@ -15,27 +15,20 @@ function arraySum(arr) {
 
 arraySum(arr);
 
-let min = null;
-let max = null;
-for (let i = 0, len = arr.length; i < len; ++i) {
-    if (isNaN(arr[i]) == true) { continue; }
-    else {
-        let elem = arr[i];
-        if (min === null || min > elem) min = elem;
-        if (max === null || max < elem) max = elem;
+
+
+function arrayMax_Min(arr) {
+    let min = null;
+    let max = null;
+    for (let i = 0, len = arr.length; i < len; ++i) {
+        if (isNaN(arr[i]) == true) { continue; }
+        else {
+            let elem = arr[i];
+            if (min === null || min > elem) min = elem;
+            if (max === null || max < elem) max = elem;
+        }
     }
-}
-alert("min = " + min + ", max = " + max);
-
-
-function makeLine(length) {
-    let line = '#';
-    for (let i = 1; i < length; i++) {
-        line += '#';
-    }
-    return line;
+    alert("min = " + min + ", max = " + max);
 }
 
-for (let i = 1; i <= 5; i++) {
-    console.log(makeLine(i));
-}
+arrayMax_Min(arr);
