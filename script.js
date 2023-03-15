@@ -1,35 +1,38 @@
-let arr = [12, 16, 2, "tea", 7, 16, 23, "coffee", 3, 56];
 
-
-
-function arraySum(arr) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (isNaN(arr[i]) == true) { continue; }
-        else {
-            sum += arr[i];
+const obj_1 = {};
+function isEmptyObj(object) {
+    for (let key in object) {
+        if (object.hasOwnProperty(key)) {
+            return false;
         }
     }
-    alert(sum);
+    return true;
 }
-
-arraySum(arr);
-
+console.log(isEmptyObj(obj_1));
 
 
-function arrayMax_Min(arr) {
-    let min = null;
-    let max = null;
-    for (let i = 0, len = arr.length; i < len; ++i) {
-        if (isNaN(arr[i]) == true) { continue; }
-        else {
-            let elem = arr[i];
-            if (min === null || min > elem) min = elem;
-            if (max === null || max < elem) max = elem;
-        }
+const user = {
+    name: 'Софія',
+    age: 20,
+    sayHello: function () {
+        console.log('Привіт, я ' + this.name + ' мені ' + this.age + ' років');
     }
-    alert("min = " + min + ", max = " + max);
-}
+};
+user.sayHello();
 
-arrayMax_Min(arr);
+let calculator = {
+    ask() {
+        this.number1 = +prompt('number1?');
+        this.number2 = +prompt('number2?');
+    },
+    sum() {
+        return this.number1 + this.number2;
+    },
 
+    mul() {
+        return this.number1 * this.number2;
+    }
+};
+calculator.ask();
+alert(calculator.sum());
+alert(calculator.mul());
