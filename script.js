@@ -2,12 +2,11 @@
 const obj_1 = {};
 function isEmptyObj(object) {
     for (let key in object) {
-        if (object.hasOwnProperty(key)) {
-            return false;
-        }
+        return false;
     }
     return true;
 }
+
 console.log(isEmptyObj(obj_1));
 
 
