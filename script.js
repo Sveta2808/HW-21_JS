@@ -1,6 +1,6 @@
 const myElement = document.getElementById('item');
 
-let arr = [12, 16, 2, "tea", 7, -16, -23, "coffee", 3, 56];
+let arr = [-12, -16, 2, "tea", 7, 16, 63, "coffee", 3, -43];
 
 
 function arraySum(arr) {
@@ -10,7 +10,7 @@ function arraySum(arr) {
         else {
             sum += arr[i];
         }
-    
+
     }
     const li = document.createElement('li');
     li.textContent = sum;
@@ -22,7 +22,7 @@ function arraySum(arr) {
     else {
         li.style.color = 'red';
     }
-        
+
 }
 
 arraySum(arr);
@@ -43,16 +43,36 @@ function arrayMax_Min(arr) {
     const li_2 = document.createElement('li');
     li_2.textContent = min;
     myElement.appendChild(li_2);
-    
+
 
     const li_3 = document.createElement('li');
     li_3.textContent = max;
     myElement.appendChild(li_3);
 
+    if (min < 0) {
+        li_2.style.opacity = '0.2';
+
+    } else if (min < 50) {
+        li_2.style.opacity = '0.5';
+
+    }
+    else if (min < 100) {
+        li_2.style.opacity = '0.7';
     
+    } else li_2.style.opacity = '1';
+
+    if (max < 0) {
+        li_3.style.opacity = '0.2';
+
+    } else if (max < 50) {
+        li_3.style.opacity = '0.5';
+
+    }
+    else if (max < 100) {
+        li_3.style.opacity = '0.7';
+    
+    } else li_3.style.opacity = '1';
 }
 
 arrayMax_Min(arr);
 
-
-//element.innerHTML= '<li> item 1 </li>';
