@@ -24,19 +24,27 @@ acc.decrement();
 alert(acc.startingValue);
 
 
-let cancelableAccumulator = new CancelableAccumulator();
 
-CancelableAccumulator.prototype = Object.create(Accumulator.prototype) 
+Accumulator.prototype.clear = function () {
 
-function CancelableAccumulator () {
-    this.clear = this.startingValue;
-    return this.clear;
+    return this.startingValue
 
 }
 
+function CancelableAccumulator() {
+    
+    Accumulator.call(this,startingValue);
+
+}
+
+CancelableAccumulator.prototype = Object.create(Accumulator.prototype)
+
+
+let cancelableAccumulator = new CancelableAccumulator();
+
 cancelableAccumulator.clear();
-alert(cancelableAccumulator.clear);
+alert(cancelableAccumulator.value);
 
 
 
-  
+
