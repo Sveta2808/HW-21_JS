@@ -35,11 +35,13 @@ function arrayMax_Min(arr) {
             if (max === null || max < elem) max = elem;
         }
     }
-    const li_2 = document.createElement('li_2');
-    const li_3 = document.createElement('li_3');
+    const li_2 = document.createElement('li');
     li_2.textContent = min;
-    li_3.textContent = max;
     element.appendChild(li_2);
+    
+
+    const li_3 = document.createElement('li');
+    li_3.textContent = max;
     element.appendChild(li_3);
 
     alert("min = " + min + ", max = " + max);
