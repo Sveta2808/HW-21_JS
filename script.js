@@ -1,7 +1,6 @@
-const element = document.getElementById('item');
+const myElement = document.getElementById('item');
 
-let arr = [12, 16, 2, "tea", 7, 16, 23, "coffee", 3, 56];
-
+let arr = [12, 16, 2, "tea", 7, -16, -23, "coffee", 3, 56];
 
 
 function arraySum(arr) {
@@ -15,9 +14,15 @@ function arraySum(arr) {
     }
     const li = document.createElement('li');
     li.textContent = sum;
-    element.appendChild(li);
+    myElement.appendChild(li);
 
-    alert(sum);
+    if (sum >= 0) {
+        li.style.color = 'green';
+    }
+    else {
+        li.style.color = 'red';
+    }
+        
 }
 
 arraySum(arr);
@@ -37,14 +42,14 @@ function arrayMax_Min(arr) {
     }
     const li_2 = document.createElement('li');
     li_2.textContent = min;
-    element.appendChild(li_2);
+    myElement.appendChild(li_2);
     
 
     const li_3 = document.createElement('li');
     li_3.textContent = max;
-    element.appendChild(li_3);
+    myElement.appendChild(li_3);
 
-    alert("min = " + min + ", max = " + max);
+    
 }
 
 arrayMax_Min(arr);
