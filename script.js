@@ -1,27 +1,42 @@
 
-function Accumulator(value) {
-    this.value = value;
+function Accumulator(startingValue) {
+    this.startingValue = startingValue;
 
     this.increment = function () {
-        this.value = +prompt('Adder', 0) + 1;
+        this.startingValue = this.startingValue + 1;
     };
     this.decrement = function () {
-        this.value = +prompt('Reducer', 0) - 1;
+        this.startingValue = this.startingValue - 1;
     };
 
 }
 
-let acc = new Accumulator();
+let acc = new Accumulator(5);
 
 acc.increment();
-alert(acc.value);
+alert(acc.startingValue);
 acc.increment();
-alert(acc.value);
+alert(acc.startingValue);
 
 acc.decrement();
-alert(acc.value);
+alert(acc.startingValue);
 acc.decrement();
-alert(acc.value);
+alert(acc.startingValue);
+
+
+let cancelableAccumulator = new CancelableAccumulator();
+
+CancelableAccumulator.prototype = Object.create(Accumulator.prototype) 
+
+function CancelableAccumulator () {
+    this.clear = this.startingValue;
+    return this.clear;
+
+}
+
+cancelableAccumulator.clear();
+alert(cancelableAccumulator.clear);
+
 
 
   
